@@ -1,0 +1,26 @@
+/* Page base: reset minimal, apply tokens at body */
+html, body { margin: 0; padding: 0; }
+html { background: var(--paper); }
+body {
+  font-family: var(--f-sans);
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  letter-spacing: -0.005em;
+}
+*, *::before, *::after { box-sizing: border-box; }
+a { color: inherit; text-decoration: none; }
+
+/* Mono utility lives in theme.css */
+
+/* Reduced motion: freeze the doubling lattice on the peak step, but
+   still let the cycle "advance" silently for the counter aria-live. */
+@media (prefers-reduced-motion: reduce) {
+  .lattice.doubling i {
+    transition: none !important;
+  }
+  .mono[data-counter] {
+    animation: none !important;
+  }
+}

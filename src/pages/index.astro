@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Foot from '../components/Foot.astro';
+import DoublingLattice from '../islands/DoublingLattice.tsx';
+---
+
+<BaseLayout title="72mn — seven doublings to a million">
+  <div class="page-shell">
+    <Nav />
+
+    <main class="hero">
+      <div class="hero-lattice">
+        <DoublingLattice client:load />
+      </div>
+
+      <div class="hero-copy">
+        <div class="kicker">72mn — a US-based startup</div>
+        <h1 class="display hero-h1">
+          Seven doublings turn
+          <span class="mono hero-h1-num">$10K</span>
+          into
+          <span class="mono hero-h1-num">$1M</span>.
+        </h1>
+        <div class="rule-accent"></div>
+        <p class="lede dim hero-lede">
+          72mn is the path between the two. We build AI products that
+          help traders compound — one doubling at a time.
+        </p>
+        <div class="hero-cta">
+          <a href="https://hunch.72mn.com" class="btn">See our first product →</a>
+          <span class="mono hero-cta-cap">Hunch · Trader Brain</span>
+        </div>
+      </div>
+    </main>
+
+    <Foot />
+  </div>
+</BaseLayout>
+
+<style>
+  .page-shell {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    padding: 64px 56px 72px;
+    gap: 88px;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-lattice {
+    min-width: 0;
+  }
+
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .hero-h1 {
+    font-size: 56px;
+    max-width: 18ch;
+    line-height: 1.04;
+  }
+
+  .hero-h1-num {
+    font-size: 0.92em;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-lede {
+    max-width: 460px;
+  }
+
+  .hero-cta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 12px;
+  }
+
+  .hero-cta-cap {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Responsive fallback for narrower viewports — collapse to single column */
+  @media (max-width: 1024px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 48px;
+      padding: 48px 32px;
+    }
+    .hero-h1 {
+      font-size: 44px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding: 32px 20px;
+    }
+    .hero-h1 {
+      font-size: 34px;
+    }
+  }
+</style>

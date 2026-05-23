@@ -1,0 +1,11 @@
+---
+interface Props {
+  size?: number;
+}
+const { size = 15 } = Astro.props;
+---
+
+<span class="wm" style={`font-size:${size}px`}>
+  <span class="wm-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  <span class="wm-text">72mn</span>
+</span>
