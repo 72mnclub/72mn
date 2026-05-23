@@ -20,3 +20,7 @@ pnpm-debug.log*
 
 # jetbrains
 .idea
+
+# local-only docs and handoff material — never publish to the public repo
+HANDOVER.md
+design_handoff_72mn_website/
